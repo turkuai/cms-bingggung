@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>BMW - Muokattava sivu</title>
+    <style>
+        body {
+            background-color: gray;
+            font-family: Arial, sans-serif;
+        }
+
+        .flex-container {
+            display: flex;
+            border: 2px solid black;
+            margin: 20px;
+            padding: 20px;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .editable {
+            background-color: white;
+            padding: 5px;
+            border-radius: 5px;
+            min-width: 200px;
+        }
+
+        button {
+            margin-top: 10px;
+        }
+
+        h1, p, a {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="flex-container">
+        <img src="https://wallpapers.com/images/hd/bmw-logo-pictures-ze2z9ara3fji7q0y.jpg" height="100" width="100">
+        <div>
+            <a href="#" class="editable" contenteditable="false">Home</a><br>
+            <a href="#" class="editable" contenteditable="false">About</a><br>
+            <a href="#" class="editable" contenteditable="false">Blog</a><br>
+            <button onclick="toggleEdit(this)">Edit</button>
+        </div>
+    </div>
+
+    <div class="flex-container">
+        <div>
+            <h1 class="editable" contenteditable="false">BMW Cars</h1>
+            <p class="editable" contenteditable="false">
+                BMW, or Bayerische Motoren Werke AG, is a German automobile manufacturer...
+            </p>
+            <button onclick="toggleEdit(this)">Edit</button>
+        </div>
+    </div>
+
+    <div class="flex-container">
+        <div>
+            <h1 class="editable" contenteditable="false">BMW M Cars</h1>
+            <p class="editable" contenteditable="false">
+                BMW M cars are high-performance models designed to deliver an exhilarating driving experience...
+            </p>
+            <button onclick="toggleEdit(this)">Edit</button>
+        </div>
+        <img src="https://cdn.shopify.com/s/files/1/0246/1483/0160/files/005.jpg?v=1666764360" height="120" width="160">
+    </div>
+
+    <div class="flex-container">
+        <div>
+            <h1 class="editable" contenteditable="false">BMW (Bayerische Motoren Werke AG)</h1>
+            <p class="editable" contenteditable="false">
+                Founded: March 7, 1916 — Headquarters: Munich, Germany — Industry: Automotive
+            </p>
+            <button onclick="toggleEdit(this)">Edit</button>
+        </div>
+
+        <div>
+            <a href="#" class="editable" contenteditable="false">Instagram</a><br>
+            <a href="#" class="editable" contenteditable="false">Facebook</a><br>
+            <a href="#" class="editable" contenteditable="false">Youtube</a><br>
+            <a href="#" class="editable" contenteditable="false">Snapchat</a><br>
+            <button onclick="toggleEdit(this)">Edit</button>
+        </div>
+
+        <div>
+            <a href="#" class="editable" contenteditable="false">Website</a><br>
+            <a href="#" class="editable" contenteditable="false">Contact us</a><br>
+            <a href="#" class="editable" contenteditable="false">Email us</a><br>
+            <button onclick="toggleEdit(this)">Edit</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleEdit(button) {
+            const container = button.parentElement;
+            const editables = container.querySelectorAll('.editable');
+            const isEditing = editables[0].contentEditable === "true";
+
+            editables.forEach(el => el.contentEditable = !isEditing);
+            button.textContent = isEditing ? "Edit" : "Save";
+        }
+    </script>
+
+</body>
+</html>
