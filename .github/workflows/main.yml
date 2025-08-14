@@ -13,4 +13,4 @@ jobs:
       with:
         server: 194.197.245.5
         username: 23n_2617
-        password: S]gf_sB8/NovRD(y
+        password: ${{ secrets.ftp_password }}
